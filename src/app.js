@@ -1,15 +1,16 @@
 const express = require("express");
 const app = express();
 
-app.use("/dashboard", (req, res) => {
-  res.send("Hello from the Dashboard!");
+app.get("/", (req, res) => {
+  res.send({
+    message: "This is the get/ route ",
+  });
 });
-
-app.use("/test", (req, res) => {
-  res.send("Testing the server");
+app.post("/user", (req, res) => {
+  res.send("data saved inside database");
 });
-app.use("/hello", (req, res) => {
-  res.send("Hello from the server");
+app.delete("/user", (req, res) => {
+  res.send("data deleted successfully");
 });
 
 app.listen(3000, () => {
