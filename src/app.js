@@ -4,7 +4,7 @@ const app = express();
 app.use(
   "/",
   (req, res, next) => {
-    console.log("handlign the route user !!");
+    console.log("handling the route user !!");
     res.send("response~~");
     next();
   },
